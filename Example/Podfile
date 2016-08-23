@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SSLNavigationBar_Example' do
+  pod 'SSLNavigationBar', :path => '../'
+
+  target 'SSLNavigationBar_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
