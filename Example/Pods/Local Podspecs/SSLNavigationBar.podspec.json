@@ -1,0 +1,33 @@
+{
+  "name": "SSLNavigationBar",
+  "version": "0.1.0",
+  "summary": "This is a simple custom NavigationBar written in Swift.",
+  "description": "SSLNavigationBar is a simple custom NavigationBar written in Swift. The function is same as SLNavigationBar.",
+  "homepage": "https://github.com/smilelu/SSLNavigationBar",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "smilelu": "mhilyt@foxmail.com"
+  },
+  "source": {
+    "git": "https://github.com/smilelu/SSLNavigationBar.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SSLNavigationBar/**/*.swift",
+  "resource_bundles": {
+    "SSLNavigationBar": [
+      "Resources/*.png"
+    ]
+  },
+  "frameworks": "UIKit",
+  "dependencies": {
+    "SnapKit": [
+
+    ]
+  }
+}

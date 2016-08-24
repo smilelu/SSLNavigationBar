@@ -1,0 +1,6 @@
+#import <UIKit/UIKit.h>
+
+
+FOUNDATION_EXPORT double Pods_SSLNavigationBar_Example_SSLNavigationBar_TestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_SSLNavigationBar_Example_SSLNavigationBar_TestsVersionString[];
+

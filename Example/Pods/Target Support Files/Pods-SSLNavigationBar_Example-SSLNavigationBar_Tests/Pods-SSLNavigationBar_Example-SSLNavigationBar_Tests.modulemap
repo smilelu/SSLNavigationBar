@@ -1,0 +1,6 @@
+framework module Pods_SSLNavigationBar_Example_SSLNavigationBar_Tests {
+  umbrella header "Pods-SSLNavigationBar_Example-SSLNavigationBar_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module SSLNavigationBar {
+  umbrella header "SSLNavigationBar-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -22,7 +22,7 @@ pod "SSLNavigationBar"
 
 ## Author
 
-Lilu, lilu@micfunding.com
+Smilelu, hmilyt@foxmail.com
 
 ## License
 
