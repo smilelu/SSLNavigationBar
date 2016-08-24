@@ -2,7 +2,7 @@
 A simple custom navigation bar, Create SLBarButtonItem just like create UIBarButtonItem style, convenient to extend the Navigationbar.
 
 
-This is [Objective-C Version](https://github.com/smilelu/SLNavigationBar).
+[Click here to visit the Objective-C version.](https://github.com/smilelu/SLNavigationBar).
 
 ![](./screenshots/navigationDemo.gif)
 
