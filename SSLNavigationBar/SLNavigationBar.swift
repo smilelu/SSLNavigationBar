@@ -143,23 +143,23 @@ public class SLNavigationBar: UIView {
     override public func layoutSubviews() {
         
         leftView.snp_makeConstraints { (make) in
-            make.top.equalTo(self).offset(27)
+            make.top.equalTo(self).offset(20)
             make.left.equalTo(self)
-            make.height.equalTo(30)
+            make.bottom.equalTo(self)
         }
         
         rightView.snp_makeConstraints { (make) in
-            make.top.equalTo(self).offset(27)
+            make.top.equalTo(self).offset(20)
             make.right.equalTo(self)
-            make.height.equalTo(30)
+            make.bottom.equalTo(self)
         }
         
         slTitleView.snp_makeConstraints { (make) in
-            make.top.equalTo(self).offset(27)
+            make.top.equalTo(self).offset(20)
             make.centerX.equalTo(self)
             make.left.greaterThanOrEqualTo(self.leftView.snp_right)
             make.right.greaterThanOrEqualTo(self.rightView.snp_left)
-            make.height.equalTo(30)
+            make.bottom.equalTo(self)
         }
         
         slTitleLabel?.snp_makeConstraints(closure: { (make) in
