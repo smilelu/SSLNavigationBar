@@ -9,15 +9,15 @@
 import UIKit
 import SnapKit
 
-public class SLNavigationBar: UIView {
+open class SLNavigationBar: UIView {
     
-    public var slTitleView:UIView!
+    open var slTitleView:UIView!
     
     var slTitleLabel:UILabel?
     
-    public var lineView:UIView!
+    open var lineView:UIView!
     
-    public var leftItem:UIView? {
+    open var leftItem:UIView? {
         didSet {
             for v:UIView in self.leftView.subviews {
                 v.removeFromSuperview()
@@ -34,7 +34,7 @@ public class SLNavigationBar: UIView {
         }
     }
     
-    public var leftItems:Array<UIView>? {
+    open var leftItems:Array<UIView>? {
         didSet {
             for v:UIView in self.leftView.subviews {
                 v.removeFromSuperview()
@@ -61,7 +61,7 @@ public class SLNavigationBar: UIView {
         }
     }
     
-    public var rightItem:UIView? {
+    open var rightItem:UIView? {
         didSet {
             for v:UIView in self.leftView.subviews {
                 v.removeFromSuperview()
@@ -78,7 +78,7 @@ public class SLNavigationBar: UIView {
         }
     }
     
-    public var rightItems:Array<UIView>? {
+    open var rightItems:Array<UIView>? {
         didSet {
             for v:UIView in self.rightView.subviews {
                 v.removeFromSuperview()
@@ -103,11 +103,11 @@ public class SLNavigationBar: UIView {
         }
     }
     
-    private var leftView:UIView!
-    private var rightView:UIView!
+    fileprivate var leftView:UIView!
+    fileprivate var rightView:UIView!
     
     init () {
-        super.init(frame: CGRectZero)
+        super.init(frame: CGRect.zero)
         initializer()
     }
     
@@ -131,16 +131,16 @@ public class SLNavigationBar: UIView {
         self.addSubview(slTitleView)
         
         slTitleLabel = UILabel()
-        slTitleLabel?.textColor = UIColor.whiteColor()
-        slTitleLabel?.font = UIFont.systemFontOfSize(18.0)
+        slTitleLabel?.textColor = UIColor.white
+        slTitleLabel?.font = UIFont.systemFont(ofSize: 18.0)
         slTitleView.addSubview(slTitleLabel!)
         
         lineView = UIView()
-        lineView.backgroundColor = UIColor.grayColor()
+        lineView.backgroundColor = UIColor.gray
         self.addSubview(lineView)
     }
 
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         
         leftView.snp_makeConstraints { (make) in
             make.top.equalTo(self).offset(20)

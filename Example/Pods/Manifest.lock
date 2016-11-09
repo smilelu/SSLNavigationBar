@@ -1,7 +1,7 @@
 PODS:
-  - SnapKit (0.22.0)
+  - SnapKit (0.30.0.beta2)
   - SSLNavigationBar (0.1.0):
-    - SnapKit
+    - SnapKit (~> 0.30.0.beta2)
 
 DEPENDENCIES:
   - SSLNavigationBar (from `../`)
@@ -11,7 +11,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SnapKit: 0dd2fd157330f1ea11fd84da13e6be8a7a22bae0
-  SSLNavigationBar: ded4668f52586fed4722502ff3652e755d490dac
+  SnapKit: c4bb32b1d3c5d18ff63bf95ffcbc599d2bab964c
+  SSLNavigationBar: 54d8c60e0138d84aa857b668a62468abd6c696bb
 
 COCOAPODS: 0.39.0

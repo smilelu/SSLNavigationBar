@@ -8,22 +8,22 @@
 
 import UIKit
 
-public class SLBarButtonItem: UIButton {
+open class SLBarButtonItem: UIButton {
 
     public convenience init(image: UIImage?, target:AnyObject?, action: Selector) {
         self.init()
         
-        self.setImage(image, forState: UIControlState.Normal)
-        self.addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
+        self.setImage(image, for: UIControlState())
+        self.addTarget(target, action: action, for: UIControlEvents.touchUpInside)
     }
     
     public convenience init(title: String?, target:AnyObject?, action: Selector ) {
         self.init()
-        self.titleLabel?.font = UIFont .systemFontOfSize(14.0)
-        self.setTitle(title, forState: UIControlState.Normal)
-        self.setTitleColor(UIColor .whiteColor(), forState: UIControlState.Normal)
-        self.setTitleColor(UIColor.whiteColor().colorWithAlphaComponent(0.5), forState: UIControlState.Highlighted)
-        self.addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
+        self.titleLabel?.font = UIFont .systemFont(ofSize: 14.0)
+        self.setTitle(title, for: UIControlState())
+        self.setTitleColor(UIColor.white, for: UIControlState())
+        self.setTitleColor(UIColor.white.withAlphaComponent(0.5), for: UIControlState.highlighted)
+        self.addTarget(target, action: action, for: UIControlEvents.touchUpInside)
     }
 
 }

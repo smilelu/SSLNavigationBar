@@ -7,14 +7,38 @@
 //
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
 
-public class SLBaseViewController: UIViewController {
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
+
+open class SLBaseViewController: UIViewController {
     
-    public let naviBar: SLNavigationBar! = {
-        return SLNavigationBar(frame:CGRectMake(0, 0, UIScreen.mainScreen().bounds.size.width, 64));
+    open let naviBar: SLNavigationBar! = {
+        return SLNavigationBar(frame:CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 64));
     }()
     
-    override public var title : String? {
+    override open var title : String? {
         get {
             return super.title
         }
@@ -24,21 +48,21 @@ public class SLBaseViewController: UIViewController {
         }
     }
     
-    public var naviBackgroundColor: UIColor? {
+    open var naviBackgroundColor: UIColor? {
         didSet {
             self.naviBar.backgroundColor = self.naviBackgroundColor
         }
     }
 
-    override public func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.white
         
         initNaviBar()
     }
     
-    public func initNaviBar() -> Void {
+    open func initNaviBar() -> Void {
         self.view.addSubview(self.naviBar)
         NSLog("\(naviBackgroundColor)")
         self.naviBar.backgroundColor = (naviBackgroundColor == nil ? UIColor(red: 50.0/255.0, green: 165.0/255.0, blue: 248.0/255.0, alpha: 1.0) : naviBackgroundColor)
@@ -47,11 +71,11 @@ public class SLBaseViewController: UIViewController {
         }
     }
     
-    func backClick(sender: SLBarButtonItem) -> Void {
-        self.navigationController?.popViewControllerAnimated(true)
+    func backClick(_ sender: SLBarButtonItem) -> Void {
+        self.navigationController?.popViewController(animated: true)
     }
 
-    override public func didReceiveMemoryWarning() {
+    override open func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 }

@@ -19,9 +19,9 @@ class ViewController: SLBaseViewController {
         self.title = "SSLNavigationBar Demo"
         
         nextBtn = UIButton()
-        nextBtn.setTitle("NextViewController", forState: UIControlState.Normal)
-        nextBtn.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
-        nextBtn.addTarget(self, action: #selector(nextAction(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        nextBtn.setTitle("NextViewController", for: UIControlState())
+        nextBtn.setTitleColor(UIColor.blue, for: UIControlState())
+        nextBtn.addTarget(self, action: #selector(nextAction(_:)), for: UIControlEvents.touchUpInside)
         
         self.view.insertSubview(nextBtn, belowSubview: self.naviBar)
         
@@ -41,11 +41,11 @@ class ViewController: SLBaseViewController {
         self.naviBar.leftItem = leftItem
     }
     
-    func userClick(sender: SLBarButtonItem) -> Void {
+    func userClick(_ sender: SLBarButtonItem) -> Void {
         NSLog("LeftBarButtonItem Click!")
     }
     
-    func nextAction(sender: UIButton) -> Void {
+    func nextAction(_ sender: UIButton) -> Void {
         let nextVC:NextViewController = NextViewController()
         self.navigationController?.pushViewController(nextVC, animated: true)
     }

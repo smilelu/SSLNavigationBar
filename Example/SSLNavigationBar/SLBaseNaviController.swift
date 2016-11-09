@@ -13,7 +13,7 @@ class SLBaseNaviController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationBar.hidden = true
+        navigationBar.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
