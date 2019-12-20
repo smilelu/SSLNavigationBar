@@ -49,7 +49,7 @@ open class SLNavigationBar: UIView {
                 let item = leftItems![i]
                 self.leftView.addSubview(item)
                 self.layoutIfNeeded()
-                item.snp_makeConstraints(closure: { (make) in
+                item.snp_makeConstraints({ (make) in
                     make.top.bottom.equalTo(self.leftView)
                     make.width.greaterThanOrEqualTo(30)
                     make.left.equalTo((i > 0 ? leftItems![i-1].snp_right : self.leftView.snp_left)).offset(8)
@@ -91,7 +91,7 @@ open class SLNavigationBar: UIView {
                 let item = rightItems![i]
                 self.rightView.addSubview(item)
                 self.layoutIfNeeded()
-                item.snp_makeConstraints(closure: { (make) in
+                item.snp_makeConstraints({ (make) in
                     make.top.bottom.equalTo(self.leftView)
                     make.width.greaterThanOrEqualTo(30)
                     make.right.equalTo((i > 0 ? rightItems![i-1].snp_left : self.rightView.snp_right)).offset(-8)
@@ -162,7 +162,7 @@ open class SLNavigationBar: UIView {
             make.bottom.equalTo(self)
         }
         
-        slTitleLabel?.snp_makeConstraints(closure: { (make) in
+        slTitleLabel?.snp_makeConstraints({ (make) in
             make.center.equalTo(self.slTitleView)
         })
         

@@ -21,13 +21,13 @@
   "source_files": "SSLNavigationBar/**/*.swift",
   "resource_bundles": {
     "SSLNavigationBar": [
-      "Images/*.png"
+      "Resources/*.png"
     ]
   },
   "frameworks": "UIKit",
   "dependencies": {
     "SnapKit": [
-      "~> 0.30.0.beta2"
+
     ]
   }
 }

@@ -25,21 +25,21 @@ class NextViewController: SLBaseViewController {
         self.naviBackgroundColor = UIColor.green
         
         titleStyleBtn = UIButton()
-        titleStyleBtn.setTitleColor(UIColor.blue, for: UIControlState())
-        titleStyleBtn.setTitle("TitleStyle", for: UIControlState())
-        titleStyleBtn.addTarget(self, action: #selector(titleStyleAction(_:)), for: UIControlEvents.touchUpInside)
+        titleStyleBtn.setTitleColor(UIColor.blue, for: UIControl.State())
+        titleStyleBtn.setTitle("TitleStyle", for: UIControl.State())
+        titleStyleBtn.addTarget(self, action: #selector(titleStyleAction(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(titleStyleBtn)
         
         imageStyleBtn = UIButton()
-        imageStyleBtn.setTitleColor(UIColor.blue, for: UIControlState())
-        imageStyleBtn.setTitle("ImageStyle", for: UIControlState())
-        imageStyleBtn.addTarget(self, action: #selector(imageStyleAction(_:)), for: UIControlEvents.touchUpInside)
+        imageStyleBtn.setTitleColor(UIColor.blue, for: UIControl.State())
+        imageStyleBtn.setTitle("ImageStyle", for: UIControl.State())
+        imageStyleBtn.addTarget(self, action: #selector(imageStyleAction(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(imageStyleBtn)
         
         clearItemsBtn = UIButton()
-        clearItemsBtn.setTitleColor(UIColor.blue, for: UIControlState())
-        clearItemsBtn.setTitle("clearItems", for: UIControlState())
-        clearItemsBtn.addTarget(self, action: #selector(clearItemsAction(_:)), for: UIControlEvents.touchUpInside)
+        clearItemsBtn.setTitleColor(UIColor.blue, for: UIControl.State())
+        clearItemsBtn.setTitle("clearItems", for: UIControl.State())
+        clearItemsBtn.addTarget(self, action: #selector(clearItemsAction(_:)), for: UIControl.Event.touchUpInside)
         self.view.addSubview(clearItemsBtn)
         
         self.setLayout()
@@ -62,25 +62,25 @@ class NextViewController: SLBaseViewController {
         }
     }
     
-    func titleStyleAction(_ sender:UIButton) -> Void {
+    @objc func titleStyleAction(_ sender:UIButton) -> Void {
         let rightItem1 = SLBarButtonItem(title: "编辑", target: self, action: #selector(rightItemClick(_:)))
         let rightItem2 = SLBarButtonItem(title: "删除", target: self, action: #selector(rightItemClick(_:)))
         self.naviBar.rightItems = [rightItem1, rightItem2]
     }
     
-    func imageStyleAction(_ sender:UIButton) -> Void {
+    @objc func imageStyleAction(_ sender:UIButton) -> Void {
         let rightItem1 = SLBarButtonItem(image: UIImage(named: "titlebar_more"), target: self, action: #selector(rightItemClick(_:)))
         let rightItem2 = SLBarButtonItem(image: UIImage(named: "titlebar_scan"), target: self, action: #selector(rightItemClick(_:)))
         self.naviBar.rightItems = [rightItem1, rightItem2]
     
     }
     
-    func clearItemsAction(_ sender: UIButton) -> Void {
+    @objc func clearItemsAction(_ sender: UIButton) -> Void {
         self.naviBar.rightItems = nil
     }
     
-    func rightItemClick(_ sender:SLBarButtonItem) -> Void {
-        NSLog("\(sender.currentTitle)")
+    @objc func rightItemClick(_ sender:SLBarButtonItem) -> Void {
+        NSLog("\(sender.currentTitle ?? "")")
         //Add Click Action
     }
 

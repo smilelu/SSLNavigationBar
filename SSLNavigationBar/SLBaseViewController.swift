@@ -34,11 +34,11 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 
 open class SLBaseViewController: UIViewController {
     
-    open let naviBar: SLNavigationBar! = {
+    public let naviBar: SLNavigationBar! = {
         return SLNavigationBar(frame:CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 64));
     }()
     
-    override open var title : String? {
+    override public var title : String? {
         get {
             return super.title
         }
@@ -48,7 +48,7 @@ open class SLBaseViewController: UIViewController {
         }
     }
     
-    open var naviBackgroundColor: UIColor? {
+    public var naviBackgroundColor: UIColor? {
         didSet {
             self.naviBar.backgroundColor = self.naviBackgroundColor
         }
@@ -64,14 +64,14 @@ open class SLBaseViewController: UIViewController {
     
     open func initNaviBar() -> Void {
         self.view.addSubview(self.naviBar)
-        NSLog("\(naviBackgroundColor)")
+        NSLog("\(String(describing: naviBackgroundColor))")
         self.naviBar.backgroundColor = (naviBackgroundColor == nil ? UIColor(red: 50.0/255.0, green: 165.0/255.0, blue: 248.0/255.0, alpha: 1.0) : naviBackgroundColor)
         if (self.navigationController?.viewControllers.count > 1) {
             self.naviBar.leftItem = SLBarButtonItem(image: UIImage(named: "Frameworks/SSLNavigationBar.framework/SSLNavigationBar.bundle/topbar_back"), target: self, action: #selector(backClick(_:)))
         }
     }
     
-    func backClick(_ sender: SLBarButtonItem) -> Void {
+    @objc func backClick(_ sender: SLBarButtonItem) -> Void {
         self.navigationController?.popViewController(animated: true)
     }
 
